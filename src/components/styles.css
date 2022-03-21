@@ -1,96 +1,136 @@
 .input {
-    display: flex;
-    width: 90%;
-    position: relative;
-    align-items: center;
-  }
-  
-  .input__box {
-    width: 100%;
-    border-radius: 50px;
-    padding: 20px 30px;
-    font-size: 25px;
-    border: none;
-    transition: 0.2s;
-    box-shadow: inset 0 0 5px black;
-  }
-  
-  .input__box:focus {
-    box-shadow: 0 0 10px 1000px rgba(20, 46, 117, 0.5);
-    outline: none;
-  }
-  
-  .input_submit {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    margin: 12px;
-    border-radius: 50px;
-    right: 0px;
-    border: none;
-    font-size: 15px;
-    background-color: #2f74c0;
-    color: white;
-    transition: 0.2s all;
-    box-shadow: 0 0 10px black;
-  }
-  
-  .input_submit:hover {
-    background-color: #388ae2;
-  }
-  
-  .input_submit:active {
-    transform: scale(0.8);
-    box-shadow: 0 0 5px black;
-  }
-  
+  display: flex;
+  width: 95%;
+  position: relative;
+  align-items: center;
+}
+
+.input__box {
+  width: 100%;
+  border-radius: 50px;
+  padding: 20px 30px;
+  font-size: 25px;
+  border: none;
+  transition: 0.2s;
+  box-shadow: inset 0 0 5px black;
+}
+
+.input__box:focus {
+  box-shadow: 0 0 10px 1000px rgba(20, 46, 117, 0.5);
+  outline: none;
+}
+
+.input_submit {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin: 12px;
+  border-radius: 50px;
+  right: 0px;
+  border: none;
+  font-size: 15px;
+  background-color: #2f74c0;
+  color: white;
+  transition: 0.2s all;
+  box-shadow: 0 0 10px black;
+}
+
+.input_submit:hover {
+  background-color: #388ae2;
+}
+
+.input_submit:active {
+  transform: scale(0.8);
+  box-shadow: 0 0 5px black;
+}
+
+.container {
+  display: flex;
+  width: 95%;
+  margin-top: 10px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.todos {
+  display: flex;
+  width: 47.5%;
+  flex-direction: column;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: rgb(178, 237, 240);
+}
+
+.todos__heading {
+  font-size: 30px;
+  color: rgb(51, 51, 51);
+}
+
+.todos__single {
+  display: flex;
+  width: 95%;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 15px;
+  /* background-image: url("https://img.freepik.com/free-photo/crumpled-yellow-paper-background-close-up_60487-2390.jpg?size=626&ext=jpg"); */
+  background-image: url("https://media.istockphoto.com/photos/crumpled-blue-construction-paper-background-picture-id698591996?k=20&m=698591996&s=612x612&w=0&h=wvifm1OZJXssDG4w6B0HN20ffdWkcD9C-u80w66JkA4=");
+  transition: 0.2s;
+}
+.todos__single:hover {
+  box-shadow: 0 0 5px black;
+  transform: scale(1.03)
+}
+
+.todos__single--text {
+  flex: 1;
+  padding: 5px;
+  border: none;
+  font-size: 20px;
+}
+
+.todos__single--text:focus {
+  outline: none;
+}
+
+.icon {
+  margin-left: 10px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+@media (max-width: 1100px) {
   .todos {
-    display: flex;
-    justify-content: space-evenly;
-    width: 90%;
-    flex-wrap: wrap;
+    width: 45%;
   }
-  
-  .todos__single {
-    display: flex;
-    width: 29.5%;
-    border-radius: 5px;
-    padding: 20px;
-    margin-top: 15px;
-    /* background-image: url("https://img.freepik.com/free-photo/crumpled-yellow-paper-background-close-up_60487-2390.jpg?size=626&ext=jpg"); */
-    background-image: url("https://media.istockphoto.com/photos/crumpled-blue-construction-paper-background-picture-id698591996?k=20&m=698591996&s=612x612&w=0&h=wvifm1OZJXssDG4w6B0HN20ffdWkcD9C-u80w66JkA4=")
+}
+
+@media (max-width: 800px) {
+  .input {
+    width: 95%;
   }
-  .todos__single--text {
-    flex: 1;
-    padding: 5px;
-    border: none;
-    font-size: 20px;
+  .todos {
+    width: 95%;
+    margin-bottom: 10px;
   }
-  
-  .todos__single--text:focus {
-    outline: none;
+
+  .container {
+    width: 95%;
+    flex-direction: column;
   }
-  
-  .icon {
-    margin-left: 10px;
-    font-size: 25px;
-    cursor: pointer;
-  }
-  
-  @media (max-width: 1200px) {
-    .todos__single {
-      width: 40%;
-    }
-  }
-  
-  @media (max-width: 700px) {
-    .input {
-      width: 95%;
-    }
-    .todos {
-      width: 95%;
-    }
-    .todos__single {
-      width: 100%;
-    }
-  }
+}
+
+.remove {
+  background-color: rgb(235, 103, 80);
+}
+
+.dragactive {
+  background-color: rgb(35, 223, 236);
+}
+
+.dragcomplete {
+  background-color: rgb(255, 60, 25);
+}
+
+.drag {
+  box-shadow: 0 0 20px black;
+}
